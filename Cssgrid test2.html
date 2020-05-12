@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CssGridTest</title>
+    <style>
+    body {
+     padding: 0;
+     margin: 0;
+	}
+    div.page {
+     height: 100vh;
+     display: grid;
+     grid-template-columns: 1fre 3fr;
+     grid-template-rows: 1fr 10fr 1fr;
+     grid-template-areas: 'header header'
+                          'menu maincontent'
+                          'footer footer'
+	}
+    div.header {
+    text-align:center;
+     background-color:red;
+     grid-area: header;
+	}
+     div.menu {
+     textalign:top-left;
+     background-color:blue;
+     grid-area: menu;
+	}
+     div.maincontent {
+     text-align:center;
+     background-color:yellow;
+     grid-area: maincontent;
+	}
+     div.footer {
+     background-color:green;
+     grid-area: footer;
+	}
+
+    @media only screen and (max-width: 600px) {
+      div.page {
+     grid-template-columns: 1fre;
+     grid-template-rows: 1fr 1fr 4fr 50px;
+     grid-template-areas: 'header'
+                          'menu'
+                          'maincontent'
+                          'footer'
+	 }
+	}
+    </style>
+</head>
+<body>
+<div class="page">
+<div class="header">Header
+<h6>Viktig Tekst</h6>
+<p style="text-align:left;"> Veldig viktig setning fra venstre til høyre &#128525 &#128523;</p>
+</div>
+<div class="menu">Menu diverse  
+<svg width="1fr" height="1fr">
+  <rect x="50" y="100" width="100" height="100" style="fill:rgb(0,255,0);stroke-width:3;stroke:rgb(255,0,0)" />
+</svg></div>
+<div class="maincontent">MainContent</div>
+<div class="footer">Footer</div>
+</div>
+</body>
+</html>
